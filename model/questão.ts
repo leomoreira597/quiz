@@ -1,13 +1,15 @@
+import RespostasModel from "./respostas"
+
 export default class QuestaoModel{
     #id: number
     #enunciado: string
-    #respostas: any[]
+    #respostas: RespostasModel[]
     #acertou: boolean
 
     constructor(
         id: number,
         enunciado: string,
-        respostas: any[],
+        respostas: RespostasModel[],
         acertou = false
     ){
         this.#id = id
@@ -33,6 +35,9 @@ export default class QuestaoModel{
     }
 
     get respondida(){
+        for(let resposta of this.#respostas){
+            if(resposta.getRevelada) return true
+        }
         return false
     }
 }
