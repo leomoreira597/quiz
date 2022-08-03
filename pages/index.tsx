@@ -10,6 +10,13 @@ export default function Home() {
     RespostasModel.certa('Azul')
   ])
   return (
-    <Questao valor={questaoTeste}/>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh'
+    }}>
+      <Questao valor={questaoTeste}/>
+    </div>
   )
 }
