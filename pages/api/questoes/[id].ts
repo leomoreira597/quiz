@@ -7,7 +7,7 @@ export default function handler(req, res) {
 
     if(unicaQuestaoOuNada.length === 1){
         const questaoSelecionada = unicaQuestaoOuNada[0].embaralharRespostas()
-        res.status(200).json(questaoSelecionada.paraObjeto())
+        res.status(200).json(questaoSelecionada.responderCom(0).paraObjeto())
     }
     else{
         res.status(404).send()
