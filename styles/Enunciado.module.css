@@ -1,5 +1,7 @@
 .enunciado{
     display: flex;
+    align-itens: center;
+    justify-content: center;
 }
 
 .texto{
