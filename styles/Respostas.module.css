@@ -18,10 +18,31 @@
     color: #FFF;
 }
 
+.verso > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    flex: 1;
+}
+
+.certa{
+    background-color: #2BAA6D;
+}
+
+.errada{
+    background-color: #E44A4c;
+}
+
 .frente, .verso{
     position: absolute;
     display: flex;
     height: 100%
+}
+
+.certa .valor, .errada .valor{
+    font-size: 1.5rem;
 }
 
 .valor{
@@ -43,6 +64,3 @@
     width: 100%
 }
 
-.verso{
-    
-}
