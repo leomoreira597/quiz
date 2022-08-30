@@ -3,6 +3,8 @@ import QuestaoModel from '../model/questão'
 import RespostasModel from '../model/respostas'
 import React from 'react'
 import Botao from '../components/Botao'
+import styles from '../styles/Botao.module.css'
+import Questionario from '../components/Questionario'
 
 const questaoMock = new QuestaoModel(1, 'Melhor cor?', [
   RespostasModel.errada('Verde'),
@@ -20,15 +22,12 @@ export default function Home() {
     questaoRef.current = questao
   }, [questao])
 
-  function respostaFornecida(indice: number){
-    setQuestao(questao.responderCom(indice))
-    console.log(indice)
+  function questaoRespondida(){
+
   }
 
-  function tempoEsgotado(){
-    if(questao.naoRespondida){
-      setQuestao(questaoRef.current.responderCom(-1))
-    }
+  function proximoPasso(){
+
   }
 
   return (
@@ -39,9 +38,12 @@ export default function Home() {
       alignItems: 'center',
       height: '100vh'
     }}>
-      <Questao valor={questao} respostaFornecida={respostaFornecida}
-          tempoEsgotado={tempoEsgotado}/>
-      <Botao texto='Próxima Questão ' href='/resultado'/>
+      <Questionario
+        questao={questao}
+        ultima={true}
+        questaoRespondida={questaoRespondida}
+        irParaProximoPasso={proximoPasso}
+      />
     </div>
   )
 }
